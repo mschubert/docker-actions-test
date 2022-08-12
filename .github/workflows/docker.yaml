@@ -41,5 +41,5 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           context: .
-          tags: mschubert/docker-actions-test:latest
+          tags: ${{ env.REGISTRY }}/${{ github.actor }}/${{ env.IMAGE_NAME }}:latest
           push: true
