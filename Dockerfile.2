@@ -1,0 +1,6 @@
+FROM ghcr.io/mschubert/docker-actions-test:latest
+ENV DEBIAN_FRONTEND=noninteractive
+
+RUN wget -O file2 https://raw.githubusercontent.com/mschubert/docker-actions-test/master/containerfile
+
+ENTRYPOINT ["/bin/bash"]
