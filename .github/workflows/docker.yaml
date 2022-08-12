@@ -6,6 +6,7 @@ name: docker test
 env:
   REGISTRY: ghcr.io
   IMAGE_NAME: ${{ github.repository }}
+  TAG: ghcr.io/${{ github.repository }}:latest
 
 jobs:
   build:
@@ -38,7 +39,7 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           context: .
-          tags: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:latest
+          tags: ${{ env.TAG }}
           push: true
 
   use:
@@ -68,3 +69,4 @@ jobs:
         with:
           context: .
           file: Dockerfile.2
+          build-args: FROM=${{ env.TAG }}
