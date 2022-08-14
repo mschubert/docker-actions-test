@@ -1,7 +1,8 @@
-ARG FROM
-FROM $FROM
+FROM ubuntu:22.04
 ENV DEBIAN_FRONTEND=noninteractive
 
+RUN id
+RUN pwd
 RUN cat containerfile
 RUN cp containerfile containerfile_copy
 
