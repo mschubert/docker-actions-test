@@ -2,6 +2,7 @@ ARG FROM
 FROM $FROM
 ENV DEBIAN_FRONTEND=noninteractive
 
-RUN wget -O file2 https://raw.githubusercontent.com/mschubert/docker-actions-test/master/containerfile
+RUN cat containerfile
+RUN cp containerfile{,_copy}
 
 ENTRYPOINT ["/bin/bash"]
