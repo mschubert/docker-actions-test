@@ -70,5 +70,5 @@ jobs:
           context: .
           file: Dockerfile.2
           tags: ${{ env.TAG }}
-          load: true
+          cache-from: type=registry,ref=${{ env.TAG }}
           push: true
