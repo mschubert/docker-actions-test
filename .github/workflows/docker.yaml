@@ -69,4 +69,6 @@ jobs:
         with:
           context: .
           file: Dockerfile.2
-          build-args: FROM=${{ env.TAG }}
+          tags: ${{ env.TAG }}
+          load: true
+          push: true
