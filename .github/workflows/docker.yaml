@@ -68,7 +68,5 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           context: .
-          file: Dockerfile.2
+          file: [ Dockerfile Dockerfile.2 ]
           tags: ${{ env.TAG }}
-          cache-from: type=registry,ref=${{ env.TAG }}
-          push: true
