@@ -3,6 +3,6 @@ FROM $FROM
 ENV DEBIAN_FRONTEND=noninteractive
 
 RUN cat containerfile
-RUN cp containerfile{,_copy}
+RUN cp containerfile containerfile_copy
 
 ENTRYPOINT ["/bin/bash"]
